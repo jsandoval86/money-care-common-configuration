@@ -1,0 +1,18 @@
+application:
+  name: "common-server-configuration"
+  description: "configuration for microservices"
+  prefix-path: "/server/config"
+
+server:
+  port: ${SERVER_PORT:8888}
+  servlet:
+    context-path: ${CONTEXT_PATH}
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${URL_REPOSITORY}
+          default-label: master
+
